@@ -120,6 +120,10 @@ python simulate_and_visualize.py
 
 ## 結果例
 
+![Simulation Results](simulation_results.png)
+
+![Particle Filter Animation](particle_filter_animation.gif)
+
 ### グラフ 1: 位置推定の精度
 - **緑線**: ロボットの真の位置
 - **赤点線**: フィルタの推定位置
@@ -129,7 +133,7 @@ python simulate_and_visualize.py
 
 ### グラフ 2: パーティクル分布の時間変化
 - **赤・オレンジ・紫・緑の点**: 異なる時刻でのパーティクル位置
-- 時間とともに粒子が真の位置周辺に集中していく様子が見られます
+- 時間とともにパーティクルが真の位置周辺に集中していく様子が見られます
 
 ### グラフ 3: 推定誤差
 - 初期段階では誤差が大きい
@@ -208,7 +212,7 @@ config_realistic = Config(process_noise=1.5, measurement_noise=5.0)
 ## 動作確認済み環境
 
 - Ubuntu 24.04
-- MacOS 3.8, 3.9, 3.10, 3.11, 3.12
+- MacOS 
 - Python 3.8, 3.9, 3.10, 3.11, 3.12
 
 ---
