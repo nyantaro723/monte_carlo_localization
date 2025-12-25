@@ -44,6 +44,10 @@ env/
 *.jpeg
 *.mp4
 
+# Keep README assets tracked
+!simulation_results.png
+!particle_filter_animation.gif
+
 # Jupyter Notebook
 .ipynb_checkpoints
 *.ipynb
