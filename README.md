@@ -1,5 +1,6 @@
 # Monte Carlo Localization: 1次元ロボット自己位置推定シミュレータ
 
+[![Test](https://github.com/nyantaro723/monte_carlo_localization/workflows/Test/badge.svg)](https://github.com/nyantaro723/monte_carlo_localization/actions/workflows/test.yml)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
@@ -253,14 +254,17 @@ config_realistic = Config(process_noise=1.5, measurement_noise=5.0)
 
 ---
 
-## ライセンス
+## 動作確認済み環境
 
-このプロジェクトはMITライセンスの下で公開されています。  
-詳細は [LICENSE](LICENSE) ファイルを参照してください。
+- Ubuntu 24.04
+- MacOS 3.8, 3.9, 3.10, 3.11, 3.12
+- Python 3.8, 3.9, 3.10, 3.11, 3.12
 
 ---
 
-## 著者
+## ライセンス
 
-- **開発者**: nyantaro723
-- **言語**: Python 3.8+
+- このプロジェクトはMITライセンスの下で公開されています。  
+- 詳細は [LICENSE](LICENSE) ファイルを参照してください。
+
+© 2025 Ryusei Matsuki
