@@ -122,8 +122,6 @@ python simulate_and_visualize.py
 
 ![Simulation Results](simulation_results.png)
 
-![Particle Filter Animation](particle_filter_animation.gif)
-
 ### グラフ 1: 位置推定の精度
 - **緑線**: ロボットの真の位置
 - **赤点線**: フィルタの推定位置
@@ -138,6 +136,8 @@ python simulate_and_visualize.py
 ### グラフ 3: 推定誤差
 - 初期段階では誤差が大きい
 - 観測を繰り返すことで誤差が減少（収束）
+
+![Particle Filter Animation](particle_filter_animation.gif)
 
 ---
 
