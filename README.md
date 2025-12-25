@@ -114,7 +114,7 @@ monte_carlo_localization/
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/YOUR_USERNAME/monte_carlo_localization.git
+git clone https://github.com/nyantaro723/monte_carlo_localization.git
 cd monte_carlo_localization
 
 # 依存パッケージをインストール
@@ -262,5 +262,5 @@ config_realistic = Config(process_noise=1.5, measurement_noise=5.0)
 
 ## 著者
 
-- **開発者**: Ryusei Matsuki
+- **開発者**: nyantaro723
 - **言語**: Python 3.8+
