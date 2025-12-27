@@ -1,9 +1,3 @@
-"""
-簡単な利用例
-
-このスクリプトは、粒子フィルタの基本的な使い方を示します。
-"""
-
 import numpy as np
 from particle_filter import ParticleFilter, Robot, Config
 
@@ -149,23 +143,23 @@ def example_landmark_comparison():
 
 
 def example_convergence():
-    """粒子の収束過程の観察"""
+    """パーティクルの収束過程の観察"""
     print("\n" + "=" * 60)
-    print("例 5: 粒子分布の収束過程")
+    print("例 5: パーティクル分布の収束過程")
     print("=" * 60)
     
     config = Config(num_particles=500)
     robot = Robot(50.0, config)
     pf = ParticleFilter(config)
     
-    # 粒子の分散を計算する関数
+    # パーティクルの分散を計算する関数
     def particle_variance():
         weighted_mean = np.average(pf.particles, weights=pf.weights)
         variance = np.average((pf.particles - weighted_mean) ** 2, 
                              weights=pf.weights)
         return variance
     
-    print(f"\nシミュレーション進行に伴う粒子分布の収束:")
+    print(f"\nシミュレーション進行に伴うパーティクル分布の収束:")
     print(f"  初期分散: {particle_variance():.2f}")
     
     for step in range(25):
@@ -185,7 +179,7 @@ if __name__ == '__main__':
     print("\n")
     print("╔" + "=" * 58 + "╗")
     print("║" + " " * 58 + "║")
-    print("║" + "  粒子フィルタの利用例".center(58) + "║")
+    print("║" + "  パーティクルフィルタの利用例".center(58) + "║")
     print("║" + " " * 58 + "║")
     print("╚" + "=" * 58 + "╝")
     print()

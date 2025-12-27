@@ -1,10 +1,3 @@
-"""
-1次元モンテカルロ自己位置推定シミュレータ (Particle Filter)
-
-このモジュールは、粒子フィルタを用いて1次元空間でのロボット自己位置推定を実装しています。
-センサー観測と移動信号からロボットの位置を推定します。
-"""
-
 import numpy as np
 from dataclasses import dataclass
 
@@ -26,12 +19,12 @@ class Config:
 
 class ParticleFilter:
     """
-    粒子フィルタを使用した1次元ロボット自己位置推定
+    パーティクルフィルタを使用した1次元ロボット自己位置推定
     """
     
     def __init__(self, config: Config):
         """
-        粒子フィルタの初期化
+        パーティクルフィルタの初期化
         
         Args:
             config: シミュレーション設定
@@ -48,7 +41,7 @@ class ParticleFilter:
         
     def predict(self, control: float):
         """
-        予測ステップ: 制御入力に基づいて粒子を更新
+        予測ステップ: 制御入力に基づいてパーティクルを更新
         
         Args:
             control: 制御入力（移動距離）
@@ -63,10 +56,10 @@ class ParticleFilter:
         
     def update(self, measurement: float):
         """
-        更新ステップ: センサー観測に基づいて重みを更新
+        更新ステップ: センサ観測に基づいて重みを更新
         
         Args:
-            measurement: センサー観測値（最も近いランドマークまでの距離）
+            measurement: センサ観測値（最も近いランドマークまでの距離）
         """
         # 各粒子の位置から見た観測の尤度を計算
         likelihoods = np.zeros(self.config.num_particles)
@@ -100,12 +93,12 @@ class ParticleFilter:
         リサンプリング: 有効粒子数に基づいて粒子を再抽出
         有効粒子数が少ない場合のみ実行
         """
-        # 有効粒子数を計算
+        # 有効パーティクル数を計算
         effective_particle_count = 1.0 / np.sum(self.weights ** 2)
         
         # リサンプリングの判定
         if effective_particle_count < self.config.resample_threshold * self.config.num_particles:
-            # 重みに基づいて粒子を再抽出
+            # 重みに基づいてパーティクルを再抽出
             indices = np.random.choice(
                 self.config.num_particles,
                 size=self.config.num_particles,

@@ -1,7 +1,3 @@
-"""
-モンテカルロ自己位置推定のシミュレーション結果を可視化
-"""
-
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')  # 非対話バックエンド
@@ -64,7 +60,7 @@ def plot_results(robot: Robot, pf: ParticleFilter, config: Config):
     
     Args:
         robot: ロボットインスタンス
-        pf: 粒子フィルタインスタンス
+        pf: パーティクルフィルタインスタンス
         config: シミュレーション設定
     """
     fig, axes = plt.subplots(3, 1, figsize=(14, 10))
@@ -88,7 +84,7 @@ def plot_results(robot: Robot, pf: ParticleFilter, config: Config):
     ax.grid(True, alpha=0.3)
     ax.set_title('Position Tracking')
     
-    # 2. 粒子の分布（複数時刻）
+    # 2. パーティクルの分布（複数時刻）
     ax = axes[1]
     time_indices = [0, len(pf.particle_history) // 3, 
                    2 * len(pf.particle_history) // 3, -1]
@@ -137,11 +133,11 @@ def plot_results(robot: Robot, pf: ParticleFilter, config: Config):
 
 def plot_particle_animation(robot: Robot, pf: ParticleFilter, config: Config):
     """
-    粒子フィルタのアニメーション
+    パーティクルフィルタのアニメーション
     
     Args:
         robot: ロボットインスタンス
-        pf: 粒子フィルタインスタンス
+        pf: パーティクルフィルタインスタンス
         config: シミュレーション設定
     """
     fig, ax = plt.subplots(figsize=(12, 4))
@@ -154,7 +150,7 @@ def plot_particle_animation(robot: Robot, pf: ParticleFilter, config: Config):
         true_pos = robot.position_history[frame]
         estimated_pos = np.average(particles, weights=weights)
         
-        # 粒子をプロット
+        # パーティクルをプロット
         sizes = weights * 1000 + 10  # 重みに応じてサイズを変更
         ax.scatter(particles, [1] * len(particles), s=sizes, 
                   alpha=0.6, c='red', label='Particles')
