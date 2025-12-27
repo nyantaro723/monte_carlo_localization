@@ -1,4 +1,5 @@
-# Monte Carlo Localization: 1次元ロボット自己位置推定シュミレータ
+# Monte Carlo Localization: 
+1次元ロボット自己位置推定シミュレータ
 
 [![Test](https://github.com/nyantaro723/monte_carlo_localization/workflows/Test/badge.svg)](https://github.com/nyantaro723/monte_carlo_localization/actions/workflows/test.yml)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
@@ -6,14 +7,14 @@
 
 ## 概要
 
-このリポジトリは、**モンテカルロ法（パーティクルフィルタ）** を用いた1次元ロボット自己位置推定のシュミレータです。ロボットがセンサー観測と移動制御のみから自身の位置を推定する過程を、パーティクルフィルタアルゴリズムで実装しています。
+このリポジトリは、**モンテカルロ法（パーティクルフィルタ）** を用いた1次元ロボット自己位置推定のシミュレータです。ロボットがセンサー観測と移動制御のみから自身の位置を推定する過程を、パーティクルフィルタアルゴリズムで実装しています。
 
 ### 🎯 何ができるのか？
 
 - **自己位置推定**: ロボットが未知の環境で自身の位置を推定
 - **パーティクルフィルタ** による逐次的な位置更新
 - **可視化**: パーティクル分布の時系列変化とアニメーションを自動生成
-- **カスタマイズ可能**: パラメータ調整で異なるシナリオをシュミレーション可能
+- **カスタマイズ可能**: パラメータ調整で異なるシナリオをシミュレーション可能
 
 ---
 
@@ -45,7 +46,7 @@
 ```
 monte_carlo_localization/
 ├── particle_filter.py           # メインアルゴリズム実装
-├── simulate_and_visualize.py    # シュミレーション & 可視化
+├── simulate_and_visualize.py    # シミュレーション & 可視化
 ├── requirements.txt              # 依存パッケージ
 ├── .gitignore                    # Git除外設定
 └── README.md                     # このファイル
@@ -57,7 +58,7 @@ monte_carlo_localization/
 
 **主要クラス:**
 
-1. **`Config`** - シュミレーション設定
+1. **`Config`** - シミュレーション設定
    - `num_particles`: パーティクル数（デフォルト: 1000）
    - `process_noise`: 移動ノイズの標準偏差
    - `measurement_noise`: センサーノイズの標準偏差
@@ -71,7 +72,7 @@ monte_carlo_localization/
    - `estimate_position()`: 現在の位置推定値を取得
    - `get_confidence()`: 推定の信頼度を計算
 
-3. **`Robot`** - 1次元ロボットシュミレータ
+3. **`Robot`** - 1次元ロボットシミュレータ
    - `move(control)`: ロボットを移動（ノイズ付き）
    - `observe_landmark()`: 最も近いランドマークまでの距離を観測
 
@@ -79,7 +80,7 @@ monte_carlo_localization/
 
 **主要関数:**
 
-- `simulate()`: シュミレーションを実行（50ステップ）
+- `simulate()`: シミュレーションを実行（50ステップ）
 - `plot_results()`: 3種類のグラフを生成
   - 位置推定の時系列
   - パーティクル分布の時間変化
@@ -107,7 +108,7 @@ pip install -r requirements.txt
 ### 実行方法
 
 ```bash
-# シュミレーションを実行して可視化を生成
+# シミュレーションを実行して可視化を生成
 python simulate_and_visualize.py
 ```
 
@@ -164,7 +165,7 @@ pf = ParticleFilter(config)
 ### 2. 異なる移動パターン
 
 ```python
-# 直線運動でなく、周期的な運動をシュミレート
+# 直線運動でなく、周期的な運動をシミュレート
 for step in range(100):
     control = 5.0 + 3.0 * np.sin(2 * np.pi * step / 20)
     robot.move(control)
@@ -191,7 +192,7 @@ config_realistic = Config(process_noise=1.5, measurement_noise=5.0)
 | パーティクル数 | 特性 | 推奨用途 |
 |-------|------|--------|
 | 100-500 | 高速・低精度 | 初期実験、デバッグ |
-| 1000-5000 | 標準 | 本格シュミレーション |
+| 1000-5000 | 標準 | 本格シミュレーション |
 | 5000+ | 低速・高精度 | 精密計測が必要な場合 |
 
 ### ノイズ標準偏差
