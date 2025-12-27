@@ -42,15 +42,12 @@
      → 重みが高い（信頼度が高い）領域にパーティクルが集中
 ```
 
-## プロジェクト構成
+## システム構成
 
 ```
 monte_carlo_localization/
 ├── particle_filter.py           # メインアルゴリズム実装
-├── simulate_and_visualize.py    # シミュレーション & 可視化
-├── requirements.txt              # 依存パッケージ
-├── .gitignore                    # Git除外設定
-└── README.md                     # このファイル
+└── simulate_and_visualize.py    # シミュレーション & 可視化
 ```
 
 ### ファイル説明
@@ -214,7 +211,7 @@ config_realistic = Config(process_noise=1.5, measurement_noise=5.0)
 ## 動作確認済み環境
 
 - Ubuntu 24.04
-- MacOS 
+- macOS 14 (Sonoma)
 - Python 3.8, 3.9, 3.10, 3.11, 3.12
 
 ---
