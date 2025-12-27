@@ -210,7 +210,7 @@ config_realistic = Config(process_noise=1.5, measurement_noise=5.0)
 
 ## 動作確認済み環境
 
-- Ubuntu 24.04
+- Ubuntu 22.04, 24.04
 - macOS 14 (Sonoma)
 - Python 3.8, 3.9, 3.10, 3.11, 3.12
 
