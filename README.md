@@ -3,8 +3,10 @@
 1次元ロボットの自己位置推定をするシミュレーション
 
 [![Test](https://github.com/nyantaro723/monte_carlo_localization/workflows/Test/badge.svg)](https://github.com/nyantaro723/monte_carlo_localization/actions/workflows/test.yml)
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/python-3.8%20%7C%203.3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+
+(https://img.shields.io/badge/python-3.8%20%7C%203.3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue)
 
 ## 概要
 
