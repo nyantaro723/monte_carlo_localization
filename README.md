@@ -21,7 +21,7 @@
 
 ## アルゴリズム: パーティクルフィルタ 
 
-パーティクルフィルタは、**非線形・非ガウス過程** の状態推定に適した確率的アルゴリズムです。
+パーティクルフィルタは、**非線形・非ガウス過程** の状態推定に適した確率的アルゴリズムです [1][2][3]。
 
 ### 動作原理
 
@@ -213,6 +213,12 @@ config_realistic = Config(process_noise=1.5, measurement_noise=5.0)
 - Ubuntu 22.04, 24.04
 - macOS 14 (Sonoma)
 - Python 3.8, 3.9, 3.10, 3.11, 3.12
+
+---
+
+## 参考文献
+
+- "Particle filter" (Wikipedia), https://en.wikipedia.org/wiki/Particle_filter
 
 ---
 
