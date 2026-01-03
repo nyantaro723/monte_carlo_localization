@@ -50,8 +50,11 @@ $$p(x_t \mid x_{t-1}, u_t)$$
 - 予測（この実装では 1次元直線＋ガウス雑音）:
 $$x_t^{(i)} = x_{t-1}^{(i)} + u_t + w_t, \quad w_t \sim \mathcal{N}(0, \sigma_p^2)$$
 
-- 重みの未正規化更新:  
-$$\tilde{w}_t^{(i)} = w_{t-1}^{(i)}\, p(z_t \mid x_t^{(i)})$$
+- 重みの未正規化更新:
+
+   $$
+   	ilde{w}_t^{(i)} = w_{t-1}^{(i)}\, p(z_t \mid x_t^{(i)})
+   $$
 
 - 正規化:
 $$w_t^{(i)} = \frac{\tilde{w}_t^{(i)}}{\sum_j \tilde{w}_t^{(j)}}$$
