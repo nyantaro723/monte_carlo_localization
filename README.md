@@ -21,7 +21,7 @@
 
 ## アルゴリズム: パーティクルフィルタ 
 
-パーティクルフィルタは、**非線形・非ガウス過程** の状態推定に適した確率的アルゴリズムです [1][2][3]。
+パーティクルフィルタは、**非線形・非ガウス過程** の状態推定に適した確率的アルゴリズムです。
 
 ### 動作原理
 
@@ -41,6 +41,25 @@
      有効パーティクル数が少ない場合、重みに基づいてパーティクルを再抽出
      → 重みが高い（信頼度が高い）領域にパーティクルが集中
 ```
+
+### 数式（予測・更新・正規化）
+
+- 遷移モデル（運動方程式の一般形）:
+$$p(x_t \mid x_{t-1}, u_t)$$
+
+- 予測（この実装では 1次元直線＋ガウス雑音）:
+$$x_t^{(i)} = x_{t-1}^{(i)} + u_t + w_t, \quad w_t \sim \mathcal{N}(0, \sigma_p^2)$$
+
+- 重みの未正規化更新:
+$$\tilde{w}_t^{(i)} = w_{t-1}^{(i)} \; p(z_t \mid x_t^{(i)})$$
+
+- 正規化:
+$$w_t^{(i)} = \frac{\tilde{w}_t^{(i)}}{\sum_j \tilde{w}_t^{(j)}}$$
+
+- 有効パーティクル数（リサンプリング判定に利用）:
+$$N_{\text{eff}} = \frac{1}{\sum_i (w_t^{(i)})^2}$$
+
+---
 
 ## システム構成
 
@@ -219,6 +238,8 @@ config_realistic = Config(process_noise=1.5, measurement_noise=5.0)
 ## 参考文献
 
 - "Particle filter" (Wikipedia), https://en.wikipedia.org/wiki/Particle_filter
+- Ryuichi Ueda, 「確率ロボティクス 2025 授業資料 Lesson 6-2」, https://ryuichiueda.github.io/slides_marp/prob_robotics_2025/lesson6-2
+- Ryuichi Ueda, 「確率ロボティクス 2025 授業資料 Lesson 7-2」, https://ryuichiueda.github.io/slides_marp/prob_robotics_2025/lesson7-2
 
 ---
 
@@ -226,6 +247,5 @@ config_realistic = Config(process_noise=1.5, measurement_noise=5.0)
 
 - このプロジェクトはMITライセンスの下で公開されています。  
 - 詳細は [LICENSE](LICENSE) ファイルを参照してください。
-- 
 
 © 2025 Ryusei Matsuki
